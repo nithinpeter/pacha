@@ -1,36 +1,17 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
+import { App } from './app';
+import { Provider } from 'react-redux';
+import { store } from './redux/store'
 
 function setup() {
   class Root extends Component {
+
     render() {
-      return (
-        <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Hows my setup.
-          </Text>
-        </View>
-      );
+      return (<Provider store={store}>
+        <App />
+      </Provider>);
     }
   }
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
-    }  });
 
   return Root;
 }
