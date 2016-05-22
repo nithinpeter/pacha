@@ -18,7 +18,7 @@ export class AppNavigator extends Component {
     }
     
     renderScene(route, navigator) {
-        return (<Account navigator={navigator}/>);
+        return (<Login navigator={navigator}/>);
     }
 
 }
